@@ -5,6 +5,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'wadackel/vim-dogrun'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'voldikss/vim-floaterm'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'glepnir/oceanic-material'
 call plug#end() 
 
 set showmatch
@@ -41,6 +48,18 @@ augroup END
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┊'
+
+"Float Terminal
+let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+
+"Nerd Tree Toggle
+map <F5> :NERDTreeToggle<CR>
+
+"fzf search
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 " open nerdtree automatically
 autocmd vimenter * NERDTree
@@ -89,4 +108,4 @@ augroup yaml_fix
     autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
 augroup END
 let ayucolor="dark"
-colorscheme ayu
+colorscheme darkblue
